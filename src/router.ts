@@ -9,7 +9,7 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/displayNames',
     name: 'DisplayNames',
-    component: () => import('./views/Home.vue')
+    component: () => import('./views/DisplayNames.vue')
   },
   {
     path: '/dateTimeFormat',

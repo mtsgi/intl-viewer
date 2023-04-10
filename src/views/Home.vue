@@ -5,7 +5,8 @@ import { routes } from '../router';
 <template>
   <main class="p-3">
     <h2 class="h2">Home</h2>
-    <p>path: {{ $router.currentRoute.value.path }}</p>
+
+    <hr />
 
     <nav class="menu">
       <router-link
