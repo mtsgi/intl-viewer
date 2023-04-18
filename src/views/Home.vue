@@ -8,14 +8,18 @@ import { routes } from '../router';
 
     <hr />
 
-    <nav class="menu">
-      <router-link
-        v-for="route in routes"
-        class="menu-item"
-        :to="route.path"
-      >
-        {{ route.name }}
-      </router-link>
-    </nav>
+    <div class="Box">
+      <div class="Box-row d-flex flex-items-center" v-for="route in routes" :key="route.path">
+        <div class="flex-auto">
+          <strong>{{ route.name }}</strong>
+          <div class="text-small color-fg-subtle">
+            Intl {{ route.name }}
+          </div>
+        </div>
+        <router-link class="btn btn-primary" :to="route.path">
+          View
+        </router-link>
+      </div>
+    </div>
   </main>
 </template>

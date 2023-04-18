@@ -31,29 +31,42 @@ const result = computed(() => {
 
     <hr />
 
-    <p>
-      Locale:
-      <input type="text" v-model="locale" class="form-control" />
-    </p>
+    <div class="form-group">
+      <div class="form-group-header">
+        <label for="locale">Locale</label>
+      </div>
+      <div class="form-group-body">
+        <input type="text" v-model="locale" id="locale" class="form-control input-block" />
+      </div>
+    </div>
 
-    <p>
-      Type:
-      <select v-model="type" class="form-select">
+    <div class="form-group">
+      <div class="form-group-header">
+        <label for="type">Type</label>
+      </div>
+      <select
+        v-model="type"
+        id="type"
+        class="form-select input-block"
+        >
         <option :value="type" v-for="type in types" :key="type">
           {{ type }}
         </option>
       </select>
-    </p>
+    </div>
 
-    <p>
-      Code:
-      <input type="text" v-model="code" class="form-control" />
-    </p>
+    <div class="form-group">
+      <div class="form-group-header">
+        <label for="code">Code</label>
+      </div>
+      <div class="form-group-body">
+        <input type="text" v-model="code" id="code" class="form-control input-block" />
+      </div>
+    </div>
 
-    <p v-if="result.ok" class="flash mt-3 flash-success">
-      Result:
-      <strong>{{ result.text }}</strong>
-    </p>
+    <div v-if="result.ok" class="flash mt-3 flash-success">
+      <p><strong>{{ result.text }}</strong></p>
+    </div>
 
     <p v-else class="flash mt-3 flash-error">
       <strong>{{ result.error }}</strong>
